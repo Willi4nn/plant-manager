@@ -9,19 +9,20 @@ import {
 } from 'react-native';
 
 import { Header } from '../components/Header';
-import waterdrop from '../assets/waterdrop.png';
-import colors from '../styles/colors';
 import { loadPlant, PlantProps, removePlant } from '../libs/storage';
 import { formatDistance } from 'date-fns';
 import { pt } from 'date-fns/locale';
-import fonts from '../styles/fonts';
 import { PlantCardSecondary } from '../components/PlantCardSecondary';
 import { Load } from '../components/Load';
+
+import waterdrop from '../assets/waterdrop.png';
+import fonts from '../styles/fonts';
+import colors from '../styles/colors';
 
 export function MyPlants() {
   const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
   const [loading, setLoading] = useState(true);
-  const [nextWatered, setNextWatered] = useState<string>();
+  const [nextWaterd, setNextWatered] = useState<string>();
 
   function handleRemove(plant: PlantProps){
     Alert.alert('Remover', `Deseja remover a ${plant.name}?`,[
@@ -81,7 +82,7 @@ export function MyPlants() {
             style={styles.spotlightImage}
             />
             <Text style={styles.spotlightText}>
-              {nextWatered}
+              {nextWaterd}
             </Text>
         </View>
 
