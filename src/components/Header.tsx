@@ -17,7 +17,7 @@ export function Header(){
 
   useEffect(() => {
     async function loadStorageUserName(){
-      const user = await AsyncStorage.getItem('@plantmaneger:user');
+      const user = await AsyncStorage.getItem('@plantmanager:user');
       setUserName(user || '');
     }
 

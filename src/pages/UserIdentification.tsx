@@ -47,7 +47,7 @@ export function UserIdentification(){
       return Alert.alert('Me diz como chamar você. 😥');
     
       try{
-      await AsyncStorage.setItem('@plantmaneger:user', name);
+      await AsyncStorage.setItem('@plantmanager:user', name);
       navigation.navigate('Confirmation', {
         title: 'Prontinho',
         subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito coidado.',

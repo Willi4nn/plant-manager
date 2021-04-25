@@ -6,6 +6,7 @@ import {
   View,
   Image,
   Platform,
+  ScrollView,
   TouchableOpacity
 } from 'react-native';
 import { SvgFromUri } from 'react-native-svg';
@@ -49,7 +50,7 @@ export function PlantSave(){
       setSelectedDateTime(dateTime);
   }
 
-  function handleOpenDatetimePickerForAndroid(){
+  function handleOpenDateTimePickerForAndroid(){
     setShowDatePicker(oldState => !oldState);
   }
   async function handleSave() {
@@ -74,6 +75,10 @@ export function PlantSave(){
   }
 
   return (
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+    >
     <View style={styles.container}>
       <View style={styles.plantInfo}>
         <SvgFromUri
@@ -116,7 +121,7 @@ export function PlantSave(){
             Platform.OS === 'android' && (
               <TouchableOpacity
               style={styles.dateTimePickerButton}
-                onPress={handleOpenDatetimePickerForAndroid}
+                onPress={handleOpenDateTimePickerForAndroid}
               >
                 <Text style={styles.dateTimePickerText}>
                   {`Mudar ${format(selectedDateTime, 'HH:mm')}`}
@@ -130,6 +135,7 @@ export function PlantSave(){
           />
         </View>
       </View>
+    </ScrollView>
   )
 }
 
@@ -205,8 +211,4 @@ const styles = StyleSheet.create({
     fontFamily: fonts.text
   }
 })
-
-function loadPlants() {
-  throw new Error('Function not implemented.');
-}
 
