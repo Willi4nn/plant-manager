@@ -47,10 +47,12 @@ export function Welcome() {
           activeOpacity={0.7}
           onPress={handleStart}
         >
-        <Feather 
-          name="chevron-right" 
-          style={styles.buttonIcon}
-        />
+        <Text>  
+          <Feather 
+            name="chevron-right" 
+            style={styles.buttonIcon}
+          />
+        </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -60,6 +62,8 @@ export function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around'
   },
   wrapper: {
     flex: 1,
@@ -71,15 +75,16 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: 'center',
     color: colors.heading,
-    paddingTop: 38,
+    marginTop: 38,
     fontFamily: fonts.heading,
+    lineHeight: 34
   },
   subtitle: {
     textAlign: 'center',
     fontSize: 18,
+    fontFamily: fonts.text,
     paddingHorizontal: 20,
-    color: colors.heading,
-    fontFamily: fonts.text
+    color: colors.heading
   },
   image: {
     height: Dimensions.get('window').width * 0.7
@@ -96,6 +101,5 @@ const styles = StyleSheet.create({
   buttonIcon: {
     fontSize: 32,
     color: colors.white,
-  },
-
+  }
 });
